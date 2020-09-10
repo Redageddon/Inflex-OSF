@@ -1,5 +1,4 @@
 ﻿using Game.Game.MainMenu;
-using Game.Game.Screens;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Screens;
@@ -7,7 +6,7 @@ using osu.Framework.Screens;
 namespace Game.Game
 {
     /// <inheritdoc />
-    public class GameGame : GameGameBase
+    public class InflexGame : InflexGameBase
     {
         private ScreenStack screenStack;
 

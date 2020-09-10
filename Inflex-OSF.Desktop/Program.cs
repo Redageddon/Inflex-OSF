@@ -8,8 +8,8 @@ namespace Game.Desktop
     {
         public static void Main()
         {
-            using GameHost host = Host.GetSuitableHost(@"Game");
-            using osu.Framework.Game game = new GameGame();
+            using GameHost host = Host.GetSuitableHost(@"Inflex");
+            using osu.Framework.Game game = new InflexGame();
             host?.Run(game);
         }
     }

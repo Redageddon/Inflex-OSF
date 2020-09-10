@@ -8,14 +8,14 @@ using osuTK;
 namespace Game.Game
 {
     /// <inheritdoc />
-    public class GameGameBase : osu.Framework.Game
+    public class InflexGameBase : osu.Framework.Game
     {
         // Ensure game and tests scale with window size and screen DPI.
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="GameGameBase"/> class.
+        ///     Initializes a new instance of the <see cref="InflexGameBase"/> class.
         /// </summary>
-        protected GameGameBase() =>
+        protected InflexGameBase() =>
             base.Content.Add(this.Content = new DrawSizePreservingFillContainer
             {
                 // You may want to change TargetDrawSize to your "default" resolution, which will decide how things scale and position when using absolute coordinates.

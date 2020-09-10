@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -12,6 +11,8 @@ namespace Game.Game.MainMenu
     /// <inheritdoc />
     public class MainMenuButtonSystem : CompositeDrawable
     {
+        private readonly Color4 buttonColor = new Color4(0, 0, 0, 255);
+
         public Action OnBeatmapSelector { get; set; }
 
         public Action OnEditor { get; set; }
@@ -42,11 +43,11 @@ namespace Game.Game.MainMenu
                         Size = new Vector2(200, 500),
                         Children = new Drawable[]
                         {
-                            new MainMenuButton("Play", null, new Color4(0, 200, 0, 255)),
-                            new MainMenuButton("Settings", null, new Color4(200, 0, 0, 255)),
-                            new MainMenuButton("Editor", null, new Color4(0, 200, 0, 255)),
-                            new MainMenuButton("Test", null, new Color4(200, 0, 0, 255)),
-                            new MainMenuButton("Quit", null, new Color4(0, 200, 0, 255)),
+                            new MainMenuButton("Play", this.OnBeatmapSelector, buttonColor),
+                            new MainMenuButton("Multiplayer", this.OnMulti, buttonColor),
+                            new MainMenuButton("Settings", this.OnSettings, buttonColor),
+                            new MainMenuButton("Editor", this.OnEditor, buttonColor),
+                            new MainMenuButton("Quit", this.OnQuit, buttonColor),
                         },
                     },
                 },

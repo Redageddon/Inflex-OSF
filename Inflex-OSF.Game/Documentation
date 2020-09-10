@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Game.Game</name>
+        <name>Inflex-OSF.Game</name>
     </assembly>
     <members>
-        <member name="T:Game.Game.GameGame">
+        <member name="T:Game.Game.InflexGame">
             <inheritdoc />
         </member>
-        <member name="M:Game.Game.GameGame.LoadComplete">
+        <member name="M:Game.Game.InflexGame.LoadComplete">
             <inheritdoc />
         </member>
-        <member name="T:Game.Game.GameGameBase">
+        <member name="T:Game.Game.InflexGameBase">
             <inheritdoc />
         </member>
-        <member name="M:Game.Game.GameGameBase.#ctor">
+        <member name="M:Game.Game.InflexGameBase.#ctor">
             <summary>
-                Initializes a new instance of the <see cref="T:Game.Game.GameGameBase"/> class.
+                Initializes a new instance of the <see cref="T:Game.Game.InflexGameBase"/> class.
             </summary>
         </member>
-        <member name="P:Game.Game.GameGameBase.Content">
+        <member name="P:Game.Game.InflexGameBase.Content">
             <inheritdoc/>
         </member>
         <member name="T:Game.Game.Background">

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+      <DocumentationFile>Documentation</DocumentationFile>
+      <NoWarn>SA1200, SA1633, SA1600, CS1591</NoWarn>
+      <RootNamespace>Infex-OSF.Game</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ppy.osu.Framework" Version="2020.904.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inflex-OSF.Resources\Inflex-OSF.Resources.csproj" />
+  </ItemGroup>
+</Project>

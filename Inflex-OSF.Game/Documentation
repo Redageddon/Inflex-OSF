@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Game.Game</name>
+    </assembly>
+    <members>
+        <member name="T:Game.Game.GameGame">
+            <inheritdoc />
+        </member>
+        <member name="M:Game.Game.GameGame.LoadComplete">
+            <inheritdoc />
+        </member>
+        <member name="T:Game.Game.GameGameBase">
+            <inheritdoc />
+        </member>
+        <member name="M:Game.Game.GameGameBase.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Game.Game.GameGameBase"/> class.
+            </summary>
+        </member>
+        <member name="P:Game.Game.GameGameBase.Content">
+            <inheritdoc/>
+        </member>
+        <member name="T:Game.Game.Background">
+            <summary>
+                A background for a screen.
+            </summary>
+        </member>
+        <member name="T:Game.Game.Screens.BeatmapSelectionScreen">
+            <inheritdoc />
+        </member>
+        <member name="T:Game.Game.MainMenu.MainMenuButtonSystem">
+            <inheritdoc />
+        </member>
+        <member name="T:Game.Game.MainMenu.MainMenuScreen">
+            <inheritdoc />
+        </member>
+        <member name="T:Game.Game.SpinningBox">
+            <summary>
+                A spinning box with a texture.
+            </summary>
+        </member>
+        <member name="M:Game.Game.SpinningBox.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Game.Game.SpinningBox"/> class.
+            </summary>
+        </member>
+        <member name="M:Game.Game.SpinningBox.LoadComplete">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

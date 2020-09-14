@@ -1,34 +1,112 @@
 using System;
+using osu.Framework.Allocation;
+using osu.Framework.Audio;
+using osu.Framework.Audio.Sample;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
+using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.UserInterface;
+using osu.Framework.Input.Events;
 using osuTK;
 using osuTK.Graphics;
 
-namespace Game.Game.MainMenu
+namespace Inflex_OSF.Game.MainMenu
 {
     public sealed class MainMenuButton : ClickableContainer
     {
-        public MainMenuButton(string text, Action buttonAction, Color4 color)
+        private const Anchor HoverAnchor = Anchor.CentreLeft;
+
+        private readonly Container mainImage;
+        private readonly Action? onPressed;
+        private readonly Box onPressedMask;
+
+        private SampleChannel? sampleClick;
+        private SampleChannel? sampleHover;
+
+        public MainMenuButton(string text, Color4 buttonColor, Action? onPressed, Vector2 size)
         {
+            this.onPressed = onPressed;
+            this.Size = size;
+
             this.Children = new Drawable[]
             {
-                this.Button = new BasicButton
+                // Button back image
+                this.mainImage = new Container
                 {
-                    Colour = color,
-                    AlwaysPresent = true,
-                    Size = new Vector2(200, 200),
-                    Action = buttonAction,
+                    RelativeSizeAxes = Axes.Both,
+                    Origin = HoverAnchor,
+                    Anchor = HoverAnchor,
+                    Children = new[]
+                    {
+                        new Box
+                        {
+                            Colour = buttonColor,
+                            RelativeSizeAxes = Axes.Both,
+                        },
+                        this.onPressedMask = new Box
+                        {
+                            Alpha = 0,
+                            Colour = Color4.White,
+                            RelativeSizeAxes = Axes.Both,
+                        },
+                    },
                 },
-                new SpriteText
+
+                // Button text
+                new Container
                 {
-                    Colour = new Color4(255, 255, 255, 255),
-                    Text = text,
+                    RelativeSizeAxes = Axes.Both,
+                    Child = new SpriteText
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre,
+                        Colour = Colour4.Black,
+                        Text = text,
+                    },
                 },
             };
         }
 
-        public Button Button { get; set; }
+        // Makes mouse detection work on this thingy
+        public override bool ReceivePositionalInputAt(Vector2 screenSpacePos) => this.mainImage.ReceivePositionalInputAt(screenSpacePos);
+
+        protected override bool OnHover(HoverEvent e)
+        {
+            this.sampleHover?.Play();
+            this.mainImage.ScaleTo(new Vector2(1.3f, 1.05f), 500, Easing.OutElastic);
+
+            return base.OnHover(e);
+        }
+
+        protected override void OnHoverLost(HoverLostEvent e) => this.mainImage.ScaleTo(Vector2.One, 500, Easing.OutElastic);
+
+        protected override bool OnMouseDown(MouseDownEvent e)
+        {
+            this.onPressedMask.FadeTo(0.5f, 1000, Easing.OutQuint);
+
+            return base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseUp(MouseUpEvent e)
+        {
+            this.onPressedMask.FadeTo(0, 1000, Easing.OutQuint);
+
+            base.OnMouseUp(e);
+        }
+
+        protected override bool OnClick(ClickEvent e)
+        {
+            this.sampleClick?.Play();
+            this.onPressed?.Invoke();
+
+            return base.OnClick(e);
+        }
+
+        [BackgroundDependencyLoader]
+        private void Load(AudioManager audio)
+        {
+            this.sampleHover = audio.Samples?.Get("hover");
+            this.sampleClick = audio.Samples?.Get("click");
+        }
     }
 }

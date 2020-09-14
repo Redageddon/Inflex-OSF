@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Game.Resources
+namespace Inflex_OSF.Resources
 {
     public static class GameResources
     {

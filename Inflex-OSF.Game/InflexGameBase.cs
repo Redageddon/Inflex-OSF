@@ -1,11 +1,11 @@
-using Game.Resources;
+using Inflex_OSF.Resources;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.IO.Stores;
 using osuTK;
 
-namespace Game.Game
+namespace Inflex_OSF.Game
 {
     /// <inheritdoc />
     public class InflexGameBase : osu.Framework.Game
@@ -13,7 +13,7 @@ namespace Game.Game
         // Ensure game and tests scale with window size and screen DPI.
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="InflexGameBase"/> class.
+        ///     Initializes a new instance of the <see cref="InflexGameBase" /> class.
         /// </summary>
         protected InflexGameBase() =>
             base.Content.Add(this.Content = new DrawSizePreservingFillContainer
@@ -25,7 +25,7 @@ namespace Game.Game
            It allows for caching global dependencies that should be accessible to tests, or changing
            the screen scaling for all components including the test browser and framework overlays.*/
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         protected override Container<Drawable> Content { get; }
 
         [BackgroundDependencyLoader]

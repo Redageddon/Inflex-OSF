@@ -1,8 +1,8 @@
-﻿using Game.Game;
+﻿using Inflex_OSF.Game;
 using osu.Framework;
 using osu.Framework.Platform;
 
-namespace Game.Desktop
+namespace Inflex_OSF.Desktop
 {
     public static class Program
     {

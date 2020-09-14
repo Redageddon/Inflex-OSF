@@ -1,9 +1,9 @@
-﻿using Game.Game.MainMenu;
+﻿using Inflex_OSF.Game.MainMenu;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Screens;
 
-namespace Game.Game
+namespace Inflex_OSF.Game
 {
     /// <inheritdoc />
     public class InflexGame : InflexGameBase

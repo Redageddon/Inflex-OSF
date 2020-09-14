@@ -1,28 +1,28 @@
-using osu.Framework.Allocation;
+using System;
+using Inflex_OSF.Game.Editor;
+using Inflex_OSF.Game.Multiplayer;
+using Inflex_OSF.Game.Screens;
+using Inflex_OSF.Game.Settings;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
 using osu.Framework.Screens;
 
-namespace Game.Game.MainMenu
+namespace Inflex_OSF.Game.MainMenu
 {
     /// <inheritdoc />
     public class MainMenuScreen : Screen
     {
-        [BackgroundDependencyLoader]
-        private void Load(TextureStore loadedTextures)
-        {
+        public MainMenuScreen() =>
             this.InternalChildren = new Drawable[]
             {
-                new Background(),
-                new MainMenuButtonSystem
+                new MainMenuButtonPanel
                 {
                     Anchor = Anchor.Centre,
-                    OnBeatmapSelector = null,
-                    OnEditor = null,
-                    OnMulti = null,
-                    OnQuit = null,
-                    OnSettings = null,
+                    OnPlay = () => this.Push(new BeatmapSelectionScreen()),
+                    OnMultiplayer = () => this.Push(new MultiplayerScreen()),
+                    OnSettings = () => this.Push(new SettingsScreen()),
+                    OnEditor = () => this.Push(new EditorScreen()),
+                    OnQuit = () => Environment.Exit(0),
                 },
                 new SpriteText
                 {
@@ -33,6 +33,5 @@ namespace Game.Game.MainMenu
                     Font = FontUsage.Default.With(size: 40),
                 },
             };
-        }
     }
 }

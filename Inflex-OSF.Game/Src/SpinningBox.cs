@@ -5,7 +5,7 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 
-namespace Game.Game
+namespace Inflex_OSF.Game
 {
     /// <summary>
     ///     A spinning box with a texture.
@@ -15,7 +15,7 @@ namespace Game.Game
         private Container box;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="SpinningBox"/> class.
+        ///     Initializes a new instance of the <see cref="SpinningBox" /> class.
         /// </summary>
         public SpinningBox()
         {
@@ -23,7 +23,7 @@ namespace Game.Game
             this.Origin = Anchor.Centre;
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         protected override void LoadComplete()
         {
             base.LoadComplete();

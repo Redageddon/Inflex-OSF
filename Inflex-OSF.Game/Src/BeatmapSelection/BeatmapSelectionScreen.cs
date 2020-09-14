@@ -4,7 +4,7 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Framework.Screens;
 
-namespace Game.Game.Screens
+namespace Inflex_OSF.Game.Screens
 {
     /// <inheritdoc />
     public class BeatmapSelectionScreen : Screen

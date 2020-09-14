@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
       <TargetFramework>netcoreapp3.1</TargetFramework>
-      <DocumentationFile>Documentation</DocumentationFile>
-      <NoWarn>SA1200, SA1633, SA1600, CS1591</NoWarn>
+      <Nullable>Enable</Nullable>
+      <NoWarn>SA1200, SA1633, SA1600, SA1602, SA0001, CS1591</NoWarn>
       <RootNamespace>Infex-OSF.Game</RootNamespace>
   </PropertyGroup>
   <ItemGroup>

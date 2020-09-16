@@ -1,16 +1,12 @@
-using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
 using osu.Framework.Screens;
 
 namespace Inflex_OSF.Game.Screens
 {
-    /// <inheritdoc />
     public class BeatmapSelectionScreen : Screen
     {
-        [BackgroundDependencyLoader]
-        private void Load(TextureStore loadedTextures) =>
+        public BeatmapSelectionScreen() =>
             this.InternalChildren = new Drawable[]
             {
                 new SpriteText

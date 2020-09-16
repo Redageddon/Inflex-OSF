@@ -9,20 +9,19 @@ using osu.Framework.Screens;
 
 namespace Inflex_OSF.Game.MainMenu
 {
-    /// <inheritdoc />
     public class MainMenuScreen : Screen
     {
         public MainMenuScreen() =>
             this.InternalChildren = new Drawable[]
             {
-                new MainMenuButtonPanel
+                new MainMenuButtonPanel(
+                    () => this.Push(new BeatmapSelectionScreen()),
+                    () => this.Push(new MultiplayerScreen()),
+                    () => this.Push(new SettingsScreen()),
+                    () => this.Push(new EditorScreen()),
+                    () => Environment.Exit(0))
                 {
                     Anchor = Anchor.Centre,
-                    OnPlay = () => this.Push(new BeatmapSelectionScreen()),
-                    OnMultiplayer = () => this.Push(new MultiplayerScreen()),
-                    OnSettings = () => this.Push(new SettingsScreen()),
-                    OnEditor = () => this.Push(new EditorScreen()),
-                    OnQuit = () => Environment.Exit(0),
                 },
                 new SpriteText
                 {

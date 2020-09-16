@@ -7,25 +7,18 @@ using osuTK;
 
 namespace Inflex_OSF.Game
 {
-    /// <inheritdoc />
     public class InflexGameBase : osu.Framework.Game
     {
-        // Ensure game and tests scale with window size and screen DPI.
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="InflexGameBase" /> class.
-        /// </summary>
         protected InflexGameBase() =>
-            base.Content.Add(this.Content = new DrawSizePreservingFillContainer
-            {
-                // You may want to change TargetDrawSize to your "default" resolution, which will decide how things scale and position when using absolute coordinates.
-                TargetDrawSize = new Vector2(1920, 1080),
-            });
+            base.Content.Add(
+                this.Content = new DrawSizePreservingFillContainer
+                {
+                    TargetDrawSize = new Vector2(1920, 1080),
+                });
         /* Anything in this class is shared between the test browser and the game implementation.
            It allows for caching global dependencies that should be accessible to tests, or changing
            the screen scaling for all components including the test browser and framework overlays.*/
 
-        /// <inheritdoc />
         protected override Container<Drawable> Content { get; }
 
         [BackgroundDependencyLoader]

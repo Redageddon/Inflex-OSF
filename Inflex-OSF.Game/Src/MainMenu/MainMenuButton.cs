@@ -17,13 +17,13 @@ namespace Inflex_OSF.Game.MainMenu
         private const Anchor HoverAnchor = Anchor.CentreLeft;
 
         private readonly Container mainImage;
-        private readonly Action? onPressed;
+        private readonly Action onPressed;
         private readonly Box onPressedMask;
 
         private SampleChannel? sampleClick;
         private SampleChannel? sampleHover;
 
-        public MainMenuButton(string text, Color4 buttonColor, Action? onPressed, Vector2 size)
+        public MainMenuButton(string text, Color4 buttonColor, Vector2 size, Action onPressed)
         {
             this.onPressed = onPressed;
             this.Size = size;
@@ -97,7 +97,7 @@ namespace Inflex_OSF.Game.MainMenu
         protected override bool OnClick(ClickEvent e)
         {
             this.sampleClick?.Play();
-            this.onPressed?.Invoke();
+            this.onPressed.Invoke();
 
             return base.OnClick(e);
         }

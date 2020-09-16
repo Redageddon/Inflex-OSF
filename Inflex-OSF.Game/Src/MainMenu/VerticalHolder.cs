@@ -8,8 +8,7 @@ namespace Inflex_OSF.Game.MainMenu
     {
         private readonly FillFlowContainer flow;
 
-        public VerticalHolder(float spacing = 0)
-        {
+        public VerticalHolder(float spacing = 0) =>
             this.InternalChild = this.flow = new FillFlowContainer
             {
                 Origin = Anchor.Centre,
@@ -17,7 +16,6 @@ namespace Inflex_OSF.Game.MainMenu
                 Direction = FillDirection.Vertical,
                 AutoSizeAxes = Axes.Both,
             };
-        }
 
         protected override Container<Drawable> Content => this.flow;
     }

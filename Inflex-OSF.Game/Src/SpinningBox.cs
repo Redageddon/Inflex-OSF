@@ -7,31 +7,16 @@ using osu.Framework.Graphics.Textures;
 
 namespace Inflex_OSF.Game
 {
-    /// <summary>
-    ///     A spinning box with a texture.
-    /// </summary>
     public sealed class SpinningBox : CompositeDrawable
     {
-        private Container box;
+        private readonly Container box;
+        private readonly Sprite sprite;
 
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="SpinningBox" /> class.
-        /// </summary>
         public SpinningBox()
         {
             this.AutoSizeAxes = Axes.Both;
             this.Origin = Anchor.Centre;
-        }
 
-        /// <inheritdoc />
-        protected override void LoadComplete()
-        {
-            base.LoadComplete();
-            this.box.Loop(b => b.RotateTo(0).RotateTo(360, 2500));
-        }
-
-        [BackgroundDependencyLoader]
-        private void Load(TextureStore textures) =>
             this.InternalChild = this.box = new Container
             {
                 AutoSizeAxes = Axes.Both,
@@ -45,13 +30,22 @@ namespace Inflex_OSF.Game
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
                     },
-                    new Sprite
+                    this.sprite = new Sprite
                     {
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
-                        Texture = textures.Get("logo"),
                     },
                 },
             };
+        }
+
+        protected override void LoadComplete()
+        {
+            base.LoadComplete();
+            this.box.Loop(b => b.RotateTo(0)?.RotateTo(360, 2500));
+        }
+
+        [BackgroundDependencyLoader]
+        private void Load(TextureStore textures) => this.sprite.Texture = textures.Get("logo");
     }
 }

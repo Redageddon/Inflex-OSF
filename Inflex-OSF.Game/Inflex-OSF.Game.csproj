@@ -12,6 +12,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="X10D" Version="2.6.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Inflex-OSF.Resources\Inflex-OSF.Resources.csproj" />

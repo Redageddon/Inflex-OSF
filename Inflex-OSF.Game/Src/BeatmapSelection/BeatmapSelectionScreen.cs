@@ -1,10 +1,10 @@
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
-using osu.Framework.Screens;
+using osuTK;
 
 namespace Inflex_OSF.Game.Screens
 {
-    public class BeatmapSelectionScreen : Screen
+    public class BeatmapSelectionScreen : InflexScreen
     {
         public BeatmapSelectionScreen() =>
             this.InternalChildren = new Drawable[]
@@ -16,6 +16,13 @@ namespace Inflex_OSF.Game.Screens
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
                     Font = FontUsage.Default.With(size: 40),
+                },
+                new LeaderboardsDisplay
+                {
+                    Anchor = Anchor.CentreRight,
+                    Origin = Anchor.CentreRight,
+                    RelativeSizeAxes = Axes.Y,
+                    Size = new Vector2(500, 1),
                 },
             };
     }

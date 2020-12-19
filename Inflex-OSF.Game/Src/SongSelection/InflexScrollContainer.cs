@@ -20,14 +20,12 @@ namespace Inflex_OSF.Game.Screens
             private const float DimSize = 5;
 
             public BasicScrollbar(Direction direction)
-                : base(direction)
-            {
+                : base(direction) =>
                 this.Child = new Box
                 {
                     RelativeSizeAxes = Axes.Both,
                     Colour = Color4.Red,
                 };
-            }
 
             public override void ResizeTo(float val, int duration = 0, Easing easing = Easing.None)
             {

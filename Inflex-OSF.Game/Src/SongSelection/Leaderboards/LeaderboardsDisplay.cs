@@ -10,12 +10,10 @@ namespace Inflex_OSF.Game.Screens
 {
     public sealed class LeaderboardsDisplay : Container
     {
-        public IEnumerable<LeaderboardPlaque> LocalScores { get; }
-
         public LeaderboardsDisplay()
         {
-            this.RelativeSizeAxes = Axes.Y;
-            this.Width = 500;
+            this.RelativeSizeAxes = Axes.Both;
+            this.Width = 0.25f;
 
             const float textSize = 90;
             const Anchor baseAnchor = Anchor.TopCentre;
@@ -111,5 +109,7 @@ namespace Inflex_OSF.Game.Screens
                 },
             };
         }
+
+        public IEnumerable<LeaderboardPlaque>? LocalScores { get; }
     }
 }

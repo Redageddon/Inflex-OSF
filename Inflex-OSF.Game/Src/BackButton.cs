@@ -5,7 +5,7 @@ using osuTK.Graphics;
 
 namespace Inflex_OSF.Game
 {
-    public class BackButton : BasicButton
+    public sealed class BackButton : BasicButton
     {
         public BackButton()
         {

@@ -9,8 +9,8 @@ namespace Inflex_OSF.Game.Screens
     {
         public BeatmapCycle()
         {
-            this.RelativeSizeAxes = Axes.Y;
-            this.Width = 500;
+            this.RelativeSizeAxes = Axes.Both;
+            this.Width = 0.25f;
 
             const float relativeSize = 0.95f;
 

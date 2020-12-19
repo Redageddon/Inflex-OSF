@@ -6,16 +6,12 @@ namespace Inflex_OSF.Game
 {
     public class InflexScreen : Screen
     {
-        protected InflexScreen()
-        {
+        protected InflexScreen() =>
             this.AddInternal(
-                this.BackButton = new BackButton
+                new BackButton
                 {
                     Action = this.Exit,
                 });
-        }
-
-        public BackButton BackButton { get; }
 
         protected override bool OnKeyDown(KeyDownEvent e)
         {
@@ -23,7 +19,6 @@ namespace Inflex_OSF.Game
             {
                 case Key.Escape:
                     this.Exit();
-
                     break;
             }
 

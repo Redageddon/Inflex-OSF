@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -14,6 +15,7 @@ namespace Inflex_OSF.Game.Pointer
     {
         private readonly Sprite center;
         private readonly Sprite pointer;
+        [NotNull]
         private InputManager inputManager;
 
         public PointerSystem()
@@ -41,7 +43,7 @@ namespace Inflex_OSF.Game.Pointer
         protected override void LoadComplete()
         {
             base.LoadComplete();
-            this.inputManager = this.GetContainingInputManager();
+            this.inputManager = this.GetContainingInputManager()!;
         }
 
         private float GetPointerRotation()

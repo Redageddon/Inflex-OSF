@@ -1,29 +1,29 @@
+using Inflex_OSF.Game.Screens.PlayDisplay;
 using osu.Framework.Graphics;
-using osu.Framework.Graphics.Sprites;
-using osuTK;
 
 namespace Inflex_OSF.Game.Screens
 {
     public class BeatmapSelectionScreen : InflexScreen
     {
         public BeatmapSelectionScreen() =>
-            this.InternalChildren = new Drawable[]
-            {
-                new SpriteText
+            this.AddRangeInternal(
+                new Drawable[]
                 {
-                    Y = 20,
-                    Text = "Beatmap Selection",
-                    Anchor = Anchor.TopCentre,
-                    Origin = Anchor.TopCentre,
-                    Font = FontUsage.Default.With(size: 40),
-                },
-                new LeaderboardsDisplay
-                {
-                    Anchor = Anchor.CentreRight,
-                    Origin = Anchor.CentreRight,
-                    RelativeSizeAxes = Axes.Y,
-                    Size = new Vector2(500, 1),
-                },
-            };
+                    new LeaderboardsDisplay
+                    {
+                        Anchor = Anchor.TopLeft,
+                        Origin = Anchor.TopLeft,
+                    },
+                    new BeatmapCycle
+                    {
+                        Anchor = Anchor.CentreRight,
+                        Origin = Anchor.CentreRight,
+                    },
+                    new PLayDisplay
+                    {
+                        Anchor = Anchor.BottomCentre,
+                        Origin = Anchor.BottomCentre,
+                    },
+                });
     }
 }

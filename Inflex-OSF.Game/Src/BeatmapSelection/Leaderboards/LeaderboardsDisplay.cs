@@ -8,164 +8,108 @@ using osuTK.Graphics;
 
 namespace Inflex_OSF.Game.Screens
 {
-    public class LeaderboardsDisplay : Container
+    public sealed class LeaderboardsDisplay : Container
     {
-        public IEnumerable<int> GlobalScores { get; }
+        public IEnumerable<LeaderboardPlaque> LocalScores { get; }
 
-        public IEnumerable<int> LocalScores { get; }
+        public LeaderboardsDisplay()
+        {
+            this.RelativeSizeAxes = Axes.Y;
+            this.Width = 500;
 
-        public IEnumerable<int> FriendScores { get; }
+            const float textSize = 90;
+            const Anchor baseAnchor = Anchor.TopCentre;
 
-        public LeaderboardsDisplay() =>
+            const float xPosition = 160;
+            const float ySeparation = 0;
+
             this.Children = new Drawable[]
             {
-                new Box
+                new Container
                 {
-                    Size = new Vector2(200, 200),
+                    Anchor = baseAnchor,
+                    Origin = baseAnchor,
+                    RelativeSizeAxes = Axes.X,
+                    Height = textSize,
+                    Children = new Drawable[]
+                    {
+                        new Box
+                        {
+                            RelativeSizeAxes = Axes.Both,
+                            Colour = new Colour4(90, 90, 90, 255),
+                        },
+                        new SpriteText
+                        {
+                            Anchor = Anchor.Centre,
+                            Origin = Anchor.Centre,
+                            Colour = Color4.Black,
+                            Text = "Leaderboards",
+                            Font = FontUsage.Default.With(size: 60),
+                        },
+                        new SpriteText
+                        {
+                            Anchor = Anchor.BottomCentre,
+                            Origin = Anchor.BottomCentre,
+                            Position = new Vector2(-xPosition, -ySeparation),
+                            Text = "HighScore",
+                            Font = FontUsage.Default.With(size: 25),
+                        },
+                        new SpriteText
+                        {
+                            Anchor = Anchor.BottomCentre,
+                            Origin = Anchor.BottomCentre,
+                            Y = -ySeparation,
+                            Text = "MaxCombo",
+                            Font = FontUsage.Default.With(size: 25),
+                        },
+                        new SpriteText
+                        {
+                            Anchor = Anchor.BottomCentre,
+                            Origin = Anchor.BottomCentre,
+                            Position = new Vector2(xPosition, -ySeparation),
+                            Text = "Accuracy",
+                            Font = FontUsage.Default.With(size: 25),
+                        },
+                    },
                 },
-                new Box
+                new InflexScrollContainer
                 {
-                    RelativeSizeAxes = Axes.Both,
-                    Colour = Colour4.White,
-                },
-                new SpriteText
-                {
-                    Anchor = Anchor.TopCentre,
-                    Origin = Anchor.TopCentre,
-                    Size = new Vector2(100, 30),
-                    Colour = Color4.Black,
-                    Text = "Leaderboards",
-                },
-                new BasicScrollContainer
-                {
-                    RelativeSizeAxes = Axes.Both,
-                    Anchor = Anchor.TopCentre,
-                    Origin = Anchor.TopCentre,
-                    ScrollbarAnchor = Anchor.TopLeft,
+                    RelativeSizeAxes = Axes.X,
+                    Height = 1080 - (textSize + 500),
+                    Position = new Vector2(0, textSize),
+                    Anchor = baseAnchor,
+                    Origin = baseAnchor,
+                    ScrollbarAnchor = Anchor.TopRight,
                     ClampExtension = 0,
                     Child = new FillFlowContainer
                     {
                         RelativeSizeAxes = Axes.X,
                         AutoSizeAxes = Axes.Y,
                         Direction = FillDirection.Vertical,
-                        Spacing = new Vector2(20),
+                        Spacing = new Vector2(10),
                         Children = new[]
                         {
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Red,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
-                            new Box
-                            {
-                                Size = new Vector2(100, 100),
-                                Colour = Colour4.Green,
-                                Anchor = Anchor.Centre,
-                                Origin = Anchor.Centre,
-                            },
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
+                            new LeaderboardPlaque(),
                         },
                     },
                 },
             };
+        }
     }
 }

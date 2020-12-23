@@ -1,4 +1,4 @@
-﻿using Inflex_OSF.Game;
+﻿using Inflex_OSF.Screens;
 using osu.Framework;
 using osu.Framework.Platform;
 

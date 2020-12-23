@@ -12,7 +12,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Inflex-OSF.Game\Inflex-OSF.Game.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="WinForms.Library" Version="1.0.60" />
-  </ItemGroup>
 </Project>

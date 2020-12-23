@@ -5,7 +5,7 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 
-namespace Inflex_OSF.Game
+namespace Inflex_OSF.Screens
 {
     public sealed class SpinningBox : CompositeDrawable
     {

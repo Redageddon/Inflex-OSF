@@ -2,15 +2,16 @@
 using osu.Framework.Graphics.Shapes;
 using osuTK.Graphics;
 
-namespace Infex_OSF.Game.Screens.Background
+namespace Infex_OSF.Game.Screens.Background;
+
+public class DefaultBackground : BackgroundScreen
 {
-    public class DefaultBackground : BackgroundScreen
+    public DefaultBackground()
     {
-        public DefaultBackground() =>
-            this.InternalChild = new Box
-            {
-                Colour = new Color4(50, 50, 50, 255),
-                RelativeSizeAxes = Axes.Both,
-            };
+        this.InternalChild = new Box
+        {
+            Colour = new Color4(50, 50, 50, 255),
+            RelativeSizeAxes = Axes.Both,
+        };
     }
 }

@@ -1,16 +1,17 @@
 ﻿using osu.Framework.Graphics;
 using osu.Framework.Screens;
 
-namespace Infex_OSF.Game.Screens.Pointer
+namespace Infex_OSF.Game.Screens.Pointer;
+
+public class PointerScreen : Screen
 {
-    public class PointerScreen : Screen
+    public PointerScreen()
     {
-        public PointerScreen() =>
-            this.InternalChild =
-                new PointerSystem
-                {
-                    Anchor = Anchor.Centre,
-                    Origin = Anchor.Centre,
-                };
+        this.InternalChild =
+            new PointerSystem
+            {
+                Anchor = Anchor.Centre,
+                Origin = Anchor.Centre,
+            };
     }
 }

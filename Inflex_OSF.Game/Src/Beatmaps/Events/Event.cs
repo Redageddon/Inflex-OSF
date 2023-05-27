@@ -1,7 +1,6 @@
-﻿namespace Infex_OSF.Game.Beatmaps.Events
+﻿namespace Infex_OSF.Game.Beatmaps.Events;
+
+public record Event
 {
-    public record Event
-    {
-        public float SpawnTime { get; set; }
-    }
+    public float SpawnTime { get; set; }
 }

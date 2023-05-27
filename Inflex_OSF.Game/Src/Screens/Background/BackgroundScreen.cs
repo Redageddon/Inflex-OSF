@@ -1,14 +1,13 @@
 ﻿using osu.Framework.Graphics;
 using osu.Framework.Screens;
 
-namespace Infex_OSF.Game.Screens.Background
+namespace Infex_OSF.Game.Screens.Background;
+
+public abstract class BackgroundScreen : Screen
 {
-    public abstract class BackgroundScreen : Screen
+    protected BackgroundScreen()
     {
-        protected BackgroundScreen()
-        {
-            this.Anchor = Anchor.Centre;
-            this.Origin = Anchor.Centre;
-        }
+        this.Anchor = Anchor.Centre;
+        this.Origin = Anchor.Centre;
     }
 }

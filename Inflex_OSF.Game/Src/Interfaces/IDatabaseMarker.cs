@@ -1,7 +1,6 @@
-﻿namespace Infex_OSF.Game.Interfaces
+﻿namespace Infex_OSF.Game.Interfaces;
+
+public interface IDatabaseMarker
 {
-    public interface IDatabaseMarker
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

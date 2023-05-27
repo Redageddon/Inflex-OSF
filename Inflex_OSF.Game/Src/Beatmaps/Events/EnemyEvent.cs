@@ -1,11 +1,10 @@
-namespace Infex_OSF.Game.Beatmaps.Events
+namespace Infex_OSF.Game.Beatmaps.Events;
+
+public record EnemyEvent : Event
 {
-    public record EnemyEvent : Event
-    {
-        public int KillKey { get; set; }
+    public int KillKey { get; set; }
 
-        public float Rotation { get; set; }
+    public float Rotation { get; set; }
 
-        public float RotationSpeed { get; set; }
-    }
+    public float RotationSpeed { get; set; }
 }

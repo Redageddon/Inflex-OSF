@@ -1,16 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-      <TargetFramework>net5.0</TargetFramework>
-      <LangVersion>latest</LangVersion>
-      <Nullable>Enable</Nullable>
-      <RootNamespace>Infex_OSF.Game</RootNamespace>
-      <AssemblyName>Inflex_OSF.Game</AssemblyName>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="ppy.osu.Framework" Version="2020.904.0" />
-    <PackageReference Include="X10D" Version="2.6.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Inflex_OSF.Resources\Inflex_OSF.Resources.csproj" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>Enable</Nullable>
+        <RootNamespace>Infex_OSF.Game</RootNamespace>
+        <AssemblyName>Inflex_OSF.Game</AssemblyName>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="ppy.osu.Framework" Version="2020.904.0" />
+        <PackageReference Include="X10D" Version="2.6.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Inflex_OSF.Resources\Inflex_OSF.Resources.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Src\Objects\Drawables" />
+    </ItemGroup>
 </Project>

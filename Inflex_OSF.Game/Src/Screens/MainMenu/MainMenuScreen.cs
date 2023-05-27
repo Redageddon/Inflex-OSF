@@ -8,37 +8,35 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Screens;
 using osuTK;
 
-namespace Infex_OSF.Game.Screens.MainMenu
-{
-    public class MainMenuScreen : InflexScreen
-    {
-        private readonly MainMenuButtonPanel buttonPanel;
+namespace Infex_OSF.Game.Screens.MainMenu;
 
-        public MainMenuScreen()
+public class MainMenuScreen : InflexScreen
+{
+    private readonly MainMenuButtonPanel buttonPanel;
+
+    public MainMenuScreen()
+    {
+        this.BackButtonEnabled = false;
+
+        this.AddRangeInternal(new Drawable[]
         {
-            this.BackButtonEnabled = false;
-            this.AddRangeInternal(
-                new Drawable[]
-                {
-                    this.buttonPanel = new MainMenuButtonPanel(
-                        () => this.Push(new SongSelectionScreen()),
-                        () => this.Push(new MultiplayerScreen()),
-                        () => this.Push(new SettingsScreen()),
-                        () => this.Push(new EditorScreen()),
-                        () => Environment.Exit(0))
-                    {
-                        Anchor = Anchor.CentreLeft,
-                        Position = new Vector2(200, 0),
-                    },
-                    new SpriteText
-                    {
-                        Y = 20,
-                        Text = "Main Screen",
-                        Anchor = Anchor.TopCentre,
-                        Origin = Anchor.TopCentre,
-                        Font = FontUsage.Default.With(size: 40),
-                    },
-                });
-        }
+            this.buttonPanel = new MainMenuButtonPanel(() => this.Push(new SongSelectionScreen()),
+                                                       () => this.Push(new MultiplayerScreen()),
+                                                       () => this.Push(new SettingsScreen()),
+                                                       () => this.Push(new EditorScreen()),
+                                                       () => Environment.Exit(0))
+            {
+                Anchor = Anchor.CentreLeft,
+                Position = new Vector2(200, 0),
+            },
+            new SpriteText
+            {
+                Y = 20,
+                Text = "Main Screen",
+                Anchor = Anchor.TopCentre,
+                Origin = Anchor.TopCentre,
+                Font = FontUsage.Default.With(size: 40),
+            },
+        });
     }
 }

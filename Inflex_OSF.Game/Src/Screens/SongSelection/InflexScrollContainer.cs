@@ -4,38 +4,37 @@ using osu.Framework.Graphics.Shapes;
 using osuTK;
 using osuTK.Graphics;
 
-namespace Infex_OSF.Game.Screens.SongSelection
+namespace Infex_OSF.Game.Screens.SongSelection;
+
+public class InflexScrollContainer : ScrollContainer<Drawable>
 {
-    public class InflexScrollContainer : ScrollContainer<Drawable>
+    public InflexScrollContainer(Direction scrollDirection = Direction.Vertical)
+        : base(scrollDirection) {}
+
+    protected override ScrollbarContainer CreateScrollbar(Direction direction) => new BasicScrollbar(direction);
+
+    private class BasicScrollbar : ScrollbarContainer
     {
-        public InflexScrollContainer(Direction scrollDirection = Direction.Vertical)
-            : base(scrollDirection)
+        private const float DimSize = 5;
+
+        public BasicScrollbar(Direction direction)
+            : base(direction)
         {
+            this.Child = new Box
+            {
+                RelativeSizeAxes = Axes.Both,
+                Colour = Color4.Red,
+            };
         }
 
-        protected override ScrollbarContainer CreateScrollbar(Direction direction) => new BasicScrollbar(direction);
-
-        private class BasicScrollbar : ScrollbarContainer
+        public override void ResizeTo(float val, int duration = 0, Easing easing = Easing.None)
         {
-            private const float DimSize = 5;
-
-            public BasicScrollbar(Direction direction)
-                : base(direction) =>
-                this.Child = new Box
-                {
-                    RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Red,
-                };
-
-            public override void ResizeTo(float val, int duration = 0, Easing easing = Easing.None)
+            Vector2 size = new(DimSize)
             {
-                Vector2 size = new (DimSize)
-                {
-                    [(int)this.ScrollDirection] = val,
-                };
+                [(int)this.ScrollDirection] = val,
+            };
 
-                this.ResizeTo(size, duration, easing);
-            }
+            this.ResizeTo(size, duration, easing);
         }
     }
 }

@@ -3,18 +3,17 @@ using osu.Framework.Graphics.UserInterface;
 using osuTK;
 using osuTK.Graphics;
 
-namespace Infex_OSF.Game.Screens
+namespace Infex_OSF.Game.Screens;
+
+public sealed class BackButton : BasicButton
 {
-    public sealed class BackButton : BasicButton
+    public BackButton()
     {
-        public BackButton()
-        {
-            this.Anchor = Anchor.BottomLeft;
-            this.Origin = Anchor.BottomLeft;
-            this.Size = new Vector2(200, 100);
-            this.BackgroundColour = new Color4(25, 25, 25, 255);
-            this.SpriteText.Colour = Colour4.White;
-            this.Text = "Back";
-        }
+        this.Anchor = Anchor.BottomLeft;
+        this.Origin = Anchor.BottomLeft;
+        this.Size = new Vector2(200, 100);
+        this.BackgroundColour = new Color4(25, 25, 25, 255);
+        this.SpriteText.Colour = Colour4.White;
+        this.Text = "Back";
     }
 }
